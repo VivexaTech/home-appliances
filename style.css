@@ -1,0 +1,218 @@
+/* ==========================================================================
+   Vivexa Tech - Custom Stylesheet
+   ========================================================================== */
+
+/* --- CSS Variables --- */
+:root {
+    --primary-color: #0A2540;      /* Deep Blue */
+    --secondary-color: #FFFFFF;    /* White */
+    --accent-color: #F8F9FA;       /* Light Gray */
+    --text-dark: #333333;
+    --text-muted: #6c757d;
+    --gradient-btn: linear-gradient(135deg, #0A2540 0%, #1e5799 100%);
+    --gradient-hover: linear-gradient(135deg, #1e5799 0%, #0A2540 100%);
+    --box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    --transition: all 0.3s ease;
+}
+
+/* --- Base & Typography --- */
+body {
+    font-family: 'Poppins', sans-serif;
+    color: var(--text-dark);
+    background-color: var(--secondary-color);
+    overflow-x: hidden;
+}
+
+.bg-accent {
+    background-color: var(--accent-color);
+}
+
+.text-primary {
+    color: var(--primary-color) !important;
+}
+
+.bg-primary {
+    background-color: var(--primary-color) !important;
+}
+
+.section-title {
+    position: relative;
+    display: inline-block;
+    padding-bottom: 10px;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background-color: var(--primary-color);
+    border-radius: 2px;
+}
+
+/* --- Buttons --- */
+.btn-gradient {
+    background: var(--gradient-btn);
+    border: none;
+    transition: var(--transition);
+}
+
+.btn-gradient:hover {
+    background: var(--gradient-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(10, 37, 64, 0.3);
+}
+
+.btn-outline-primary {
+    color: var(--primary-color);
+    border-color: var(--primary-color);
+    transition: var(--transition);
+}
+
+.btn-outline-primary:hover {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+}
+
+/* --- Navbar --- */
+.navbar {
+    transition: var(--transition);
+}
+
+.navbar-nav .nav-link {
+    color: var(--text-dark);
+    font-weight: 500;
+    margin: 0 10px;
+    position: relative;
+    transition: var(--transition);
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link.active {
+    color: var(--primary-color);
+}
+
+.navbar-nav .nav-link::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--primary-color);
+    transition: width 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover::after,
+.navbar-nav .nav-link.active::after {
+    width: 100%;
+}
+
+/* --- Hero Section --- */
+.hero {
+    min-height: 100vh;
+    /* High-quality background with dark overlay */
+    background: linear-gradient(rgba(10, 37, 64, 0.8), rgba(10, 37, 64, 0.8)), 
+                url('https://images.unsplash.com/photo-1581092921461-7031e4bf0e11?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat fixed;
+    padding-top: 80px; /* Offset for navbar */
+}
+
+/* --- Service Cards --- */
+.service-card {
+    transition: var(--transition);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--box-shadow);
+}
+
+.img-wrapper {
+    overflow: hidden;
+    height: 200px; /* Uniform image height */
+}
+
+.img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.service-card:hover .img-wrapper img {
+    transform: scale(1.1);
+}
+
+/* --- How It Works --- */
+.step-icon {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background-color: var(--secondary-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition);
+}
+
+.step-icon:hover {
+    transform: scale(1.1);
+    background-color: var(--primary-color);
+}
+
+.step-icon:hover i {
+    color: var(--secondary-color) !important;
+}
+
+/* --- Why Choose Us Cards --- */
+.feature-card {
+    transition: var(--transition);
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--box-shadow) !important;
+}
+
+/* --- Booking Form --- */
+.form-control:focus, .form-select:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 0.25rem rgba(10, 37, 64, 0.25);
+}
+
+/* --- Footer --- */
+.footer-links a {
+    color: rgba(255,255,255,0.5);
+    text-decoration: none;
+    transition: var(--transition);
+    display: block;
+    margin-bottom: 8px;
+}
+
+.footer-links a:hover {
+    color: var(--secondary-color);
+    padding-left: 5px;
+}
+
+.hover-white:hover {
+    color: var(--secondary-color) !important;
+}
+
+/* --- Media Queries --- */
+@media (max-width: 991px) {
+    .navbar-collapse {
+        background: var(--secondary-color);
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: var(--box-shadow);
+        margin-top: 15px;
+    }
+    .hero {
+        min-height: 80vh;
+        background-attachment: scroll; /* Fix for mobile bg rendering */
+    }
+}
