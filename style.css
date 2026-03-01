@@ -29,6 +29,9 @@ html, body {
     overflow-x: hidden; /* FIXED: Prevents horizontal scrolling from AOS animations */
     width: 100%;
 }
+::-webkit-scrollbar{
+    display: none;
+}
 
 .bg-accent {
     background-color: var(--accent-color);
@@ -133,7 +136,7 @@ html, body {
 .hero {
     min-height: 100vh;
     background: linear-gradient(rgba(10, 37, 64, 0.8), rgba(10, 37, 64, 0.8)), 
-                url('https://images.unsplash.com/photo-1581092921461-7031e4bf0e11?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat fixed;
+                url('https://vijayservices.in/wp-content/uploads/2023/01/home_appliances-1.jpg') center/cover no-repeat fixed;
     padding-top: 80px; 
 }
 
